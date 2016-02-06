@@ -72,8 +72,12 @@
 
 		$widget.appendTo($container);
 
+	  	if(typeof apikey === "undefined") {
+			apikey = "";
+		}
+
 		$.ajax({
-			url: 'https://api.github.com/repos/' + repo,
+			url: 'https://api.github.com/repos/' + repo + apikey,
 			dataType: 'jsonp',
 			success: function(results) {
 				var repo = results.data, date, pushed_at = 'unknown';
@@ -86,17 +90,17 @@
 				$widget.find('.watchers').text(repo.watchers_count);
 				$widget.find('.forks').text(repo.forks_count);
 				$widget.find('.description span').text(repo.description);
-				$widget.find('.updated').html('Latest commit to the <strong>' + repo.default_branch + '</strong> branch on ' + pushed_at);
+				$widget.find('.updated').html('Latest commit to the <strong>' + repo.default_branch + '</strong> branch on ' + pushed_at + '.');
 
 				// Don't show "null" if the repo has no homepage URL.
 				if(repo.homepage != null) $widget.find('.link').append($('<a />').attr('href', repo.homepage).text(repo.homepage));
 			}
 		});
 		$.ajax({
-			url: 'https://api.github.com/repos/' + repo + '/releases/latest',
+			url: 'https://api.github.com/repos/' + repo + '/releases/latest' + apikey,
 			dataType: 'jsonp',
 			success: function(results) {
-				if(results.data.message!=="Not Found") {
+				if(results.data.message !== "Not Found") {
 					$widget.find('.download').attr("href", results.data.assets[0].browser_download_url);
 					$widget.find('.download').text("Download " + results.data.tag_name + " release");
 					$widget.find('.download').css({
@@ -105,16 +109,10 @@
 					});
 				}
 				else {
-					function getZipArchive() {
-						$widget.find('.download').attr("href", repoUrl + "/zipball/master");
-						$widget.find('.download').attr("title", "Get an archive of this repository");
-						$widget.find('.download').text("Download as zip");
-					}
-					getZipArchive();
+					$widget.find('.download').attr("href", repoUrl + "/zipball/master");
+					$widget.find('.download').attr("title", "Get an archive of this repository");
+					$widget.find('.download').text("Download as zip");
 				}
-			},
-			error: function(results) {
-				getZipArchive();
 			}
 		});
 
