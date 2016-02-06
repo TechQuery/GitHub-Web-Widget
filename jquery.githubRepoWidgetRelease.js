@@ -42,8 +42,8 @@
 			repo = $container.data('repo'),
 			vendorName = repo.split('/')[0],
 			repoName = repo.split('/')[1],
-			vendorUrl = "http://github.com/" + vendorName,
-			repoUrl = "http://github.com/" + vendorName + '/' + repoName;
+			vendorUrl = "https://github.com/" + vendorName,
+			repoUrl = "https://github.com/" + vendorName + '/' + repoName;
 
 		$widget = $(
 			'<div class="github-box repo">'
@@ -65,7 +65,7 @@
 			+'<div class="github-box-download">'
 			+'<div class="updated"></div>'
 			//+'<a class="download" href="' + repoUrl + '/zipball/master" title="Get an archive of this repository">Download as zip</a>'
-			+'<a class="download" style="color: #FFF;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #60B044;background-image: linear-gradient(#8ADD6D, #60B044);" href="' + repoUrl + '/releases/latest" title="Download latest release">Download</a>'
+			+'<a class="download" href="' + repoUrl + '/releases/latest" title="Download latest release">Download latest release</a>'
 			+'</div>'
 			+'</div>'
 		);
@@ -93,12 +93,28 @@
 			}
 		});
 		$.ajax({
-			url: 'https://api.github.com/repos/' + repo+'/releases',
+			url: 'https://api.github.com/repos/' + repo + '/releases/latest',
 			dataType: 'jsonp',
 			success: function(results) {
-				var data = results.data;				
-				
-				$widget.find('.download').attr("href",data[0].assets[0].browser_download_url);
+				if(results.data.message!=="Not Found") {
+					$widget.find('.download').attr("href", results.data.assets[0].browser_download_url);
+					$widget.find('.download').text("Download " + results.data.tag_name + " release");
+					$widget.find('.download').css({
+						"color": "#FFF", "text-shadow": "0 -1px 0 rgba(0, 0, 0, 0.25)",
+						"background-color": "#60B044", "background-image": "linear-gradient(#8ADD6D, #60B044)"
+					});
+				}
+				else {
+					function getZipArchive() {
+						$widget.find('.download').attr("href", repoUrl + "/zipball/master");
+						$widget.find('.download').attr("title", "Get an archive of this repository");
+						$widget.find('.download').text("Download as zip");
+					}
+					getZipArchive();
+				}
+			},
+			error: function(results) {
+				getZipArchive();
 			}
 		});
 
