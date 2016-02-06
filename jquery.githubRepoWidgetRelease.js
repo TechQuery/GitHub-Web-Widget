@@ -80,7 +80,7 @@
 
 				if (repo.pushed_at) {
 					date = new Date(repo.pushed_at);
-					pushed_at = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
+					pushed_at = date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear();
 				}
 
 				$widget.find('.watchers').text(repo.watchers_count);
