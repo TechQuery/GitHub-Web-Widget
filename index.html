@@ -1,0 +1,232 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>GitHub Web Widget</title>
+	<meta name="description" content="Documentation for GitHub Web Widget">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">GitHub Web Widget</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>GitHub Web Widget</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#github-web-widget" id="github-web-widget" style="color: inherit; text-decoration: none;">
+					<h1>GitHub Web Widget</h1>
+				</a>
+				<p><a href="https://www.webcomponents.org/">Web Components</a> library for GitHub based on <a href="https://web-cell.dev/">WebCell</a></p>
+				<p><a href="https://david-dm.org/TechQuery/GitHub-Web-Widget"><img src="https://david-dm.org/TechQuery/GitHub-Web-Widget.svg" alt="NPM Dependency"></a>
+				<a href="https://github.com/EasyWebApp/WebCell/actions"><img src="https://github.com/EasyWebApp/GitHub-Web-Widget/workflows/CI%20&%20CD/badge.svg" alt="CI &amp; CD"></a></p>
+				<p><a href="https://nodei.co/npm/github-web-widget/"><img src="https://nodei.co/npm/github-web-widget.png?downloads=true&downloadRank=true&stars=true" alt="NPM"></a></p>
+				<a href="#demo" id="demo" style="color: inherit; text-decoration: none;">
+					<h2>Demo</h2>
+				</a>
+				<p><a href="https://tech-query.me/GitHub-Web-Widget/demo/">https://tech-query.me/GitHub-Web-Widget/demo/</a></p>
+				<a href="#components" id="components" style="color: inherit; text-decoration: none;">
+					<h2>Components</h2>
+				</a>
+				<ol>
+					<li><a href="https://tech-query.me/GitHub-Web-Widget/classes/commandline.commandline-1.html">Command Line</a></li>
+					<li><a href="https://tech-query.me/GitHub-Web-Widget/interfaces/profile.githubprofileprops.html">Owner Profile</a> (forked from <a href="http://github-profile.com/">http://github-profile.com/</a>)</li>
+					<li><a href="https://tech-query.me/GitHub-Web-Widget/interfaces/repository.githubrepositoryprops.html">Repository</a> (forked from <a href="http://www.newmediacampaigns.com/blog/a-beautiful-jquery-github-widget">jQuery GitHub Widget</a>)</li>
+					<li><a href="https://tech-query.me/GitHub-Web-Widget/interfaces/issue.githubissueprops.html">Issue</a></li>
+					<li><a href="https://tech-query.me/GitHub-Web-Widget/interfaces/eventflow.githubeventsprops.html">Event Flow</a></li>
+				</ol>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-shell"><span style="color: #000000">npm install github-web-widget</span>
+</code></pre>
+				<p><a href="https://github.com/TechQuery/GitHub-Web-Widget/blob/master/test/index.html"><code>source/index.html</code></a></p>
+				<pre><code class="language-html"><span style="color: #800000">&lt;!DOCTYPE</span><span style="color: #000000"> </span><span style="color: #FF0000">html</span><span style="color: #800000">&gt;</span>
+<span style="color: #800000">&lt;html&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;head&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;title&gt;</span><span style="color: #000000">Your Blog</span><span style="color: #800000">&lt;/title&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;link</span>
+<span style="color: #000000">            </span><span style="color: #FF0000">rel</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span>
+<span style="color: #000000">            </span><span style="color: #FF0000">href</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css&quot;</span>
+<span style="color: #000000">        </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;link</span>
+<span style="color: #000000">            </span><span style="color: #FF0000">rel</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span>
+<span style="color: #000000">            </span><span style="color: #FF0000">href</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css&quot;</span>
+<span style="color: #000000">        </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;link</span>
+<span style="color: #000000">            </span><span style="color: #FF0000">rel</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span>
+<span style="color: #000000">            </span><span style="color: #FF0000">href</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-okaidia.css&quot;</span>
+<span style="color: #000000">        </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;script</span>
+<span style="color: #000000FF">            </span><span style="color: #FF0000">crossorigin</span>
+<span style="color: #000000FF">            </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://polyfill.app/api/polyfill?features=es.string.match-all,es.array.flat,es.object.from-entries,intersection-observer&quot;</span>
+<span style="color: #000000FF">        </span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://cdn.jsdelivr.net/npm/details-element-polyfill@2.4.0/dist/details-element-polyfill.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/custom-elements-es5-adapter.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.5.0/webcomponents-bundle.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;/head&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;body&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;index.tsx&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;/body&gt;</span>
+<span style="color: #800000">&lt;/html&gt;</span>
+</code></pre>
+				<p><a href="https://github.com/TechQuery/GitHub-Web-Widget/blob/master/test/index.tsx"><code>source/index.tsx</code></a></p>
+				<pre><code class="language-JavaScript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">render</span><span style="color: #000000">, </span><span style="color: #001080">createCell</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;web-cell&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">CommandLine</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">GithubRepository</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">GithubIssue</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">GithubProfile</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">GithubEvents</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;github-web-widget/source&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #795E26">render</span><span style="color: #000000">(</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;main</span><span style="color: #000000"> </span><span style="color: #FF0000">className</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;container&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;h1&gt;</span><span style="color: #000000">GitHub Web Widget</span><span style="color: #800000">&lt;/h1&gt;</span>
+
+<span style="color: #000000">        </span><span style="color: #800000">&lt;section&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;h2&gt;</span><span style="color: #000000">Command Line</span><span style="color: #800000">&lt;/h2&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;</span><span style="color: #267F99">CommandLine</span><span style="color: #800000">&gt;</span><span style="color: #000000">npm install github-web-widget</span><span style="color: #800000">&lt;/</span><span style="color: #267F99">CommandLine</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;/section&gt;</span>
+
+<span style="color: #000000">        </span><span style="color: #800000">&lt;section&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;h2&gt;</span><span style="color: #000000">Repository</span><span style="color: #800000">&lt;/h2&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;</span><span style="color: #267F99">GithubRepository</span><span style="color: #000000"> </span><span style="color: #FF0000">owner</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;EasyWebApp&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">repository</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;WebCell&quot;</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;/section&gt;</span>
+
+<span style="color: #000000">        </span><span style="color: #800000">&lt;section&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;h2&gt;</span><span style="color: #000000">Issue</span><span style="color: #800000">&lt;/h2&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;</span><span style="color: #267F99">GithubIssue</span>
+<span style="color: #000000">                </span><span style="color: #FF0000">owner</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;jsdom&quot;</span>
+<span style="color: #000000">                </span><span style="color: #FF0000">repository</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;w3c-xmlserializer&quot;</span>
+<span style="color: #000000">                </span><span style="color: #FF0000">issue</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;2&quot;</span>
+<span style="color: #000000">            </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;/section&gt;</span>
+
+<span style="color: #000000">        </span><span style="color: #800000">&lt;section&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;h2&gt;</span><span style="color: #000000">Profile</span><span style="color: #800000">&lt;/h2&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;</span><span style="color: #267F99">GithubProfile</span><span style="color: #000000"> </span><span style="color: #FF0000">user</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;TechQuery&quot;</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;/section&gt;</span>
+
+<span style="color: #000000">        </span><span style="color: #800000">&lt;section&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;h2&gt;</span><span style="color: #000000">Event Flow</span><span style="color: #800000">&lt;/h2&gt;</span>
+<span style="color: #000000">            </span><span style="color: #800000">&lt;</span><span style="color: #267F99">GithubEvents</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #000000">        </span><span style="color: #800000">&lt;/section&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;/main&gt;</span>
+<span style="color: #000000">);</span>
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/commandline.html">Command<wbr>Line</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/eventflow.html">Event<wbr>Flow</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/issue.html">Issue</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/profile.html">Profile</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/repository.html">Repository</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/global.html">global</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/service.html">service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/utility.html">utility</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
